@@ -2,6 +2,7 @@ import axios from 'axios';
 import { User } from 'models/user';
 import React, { Dispatch, useState } from 'react'
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { Link, Navigate } from 'react-router-dom';
 import { setUser } from 'redux/actions/setUserAction';
 
@@ -38,8 +39,21 @@ const Nav = (props: { user: User, setUser: (user: User) => void }) => {
         <div className="container">
             <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
                 <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" className="nav-link px-2 link-secondary">Frontend</a></li>
-                    <li><a href="#" className="nav-link px-2">Backend</a></li>
+                    <li>
+                        <NavLink to="/"
+                            className={({ isActive }) =>
+                                isActive ? "nav-link px-2 link-dark" : "nav-link px-2 link-secondary"
+                            }>
+                            Frontend
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/backend" className={({ isActive }) =>
+                            isActive ? "nav-link px-2 link-dark" : "nav-link px-2 link-secondary"
+                        }>
+                            Backend
+                        </NavLink>
+                    </li>
                 </ul>
                 {menu}
             </header>
