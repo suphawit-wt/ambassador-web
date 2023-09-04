@@ -4,9 +4,9 @@ import Layout from "@/components/Layout";
 import axios from "axios";
 import { SyntheticEvent, useEffect, useState } from "react";
 import constants from "@/utils/constants";
-import { Product } from "@/app/models/product";
-import { Quantity } from "@/app/models/quantity";
-import { User } from "@/app/models/user";
+import { Product } from "@/models/product";
+import { Quantity } from "@/models/quantity";
+import { User } from "@/models/user";
 
 declare var Stripe: any;
 
